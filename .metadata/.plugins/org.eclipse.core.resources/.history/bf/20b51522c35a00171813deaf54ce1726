@@ -1,0 +1,12 @@
+package com.rehlati.ejb;
+
+import javax.ejb.Stateless;
+
+import com.rehlati.remote.RehaltiEJBRemote;
+
+
+@Stateless(mappedName = "ejb/RehlatiEJB", name = "RehlatiEJB")
+	
+public class RehlatiEJB implements RehaltiEJBRemote{
+
+}

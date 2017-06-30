@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardArchetypePage">
+		<item value="All Catalogs" key="catalog"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="issueManagementUrl">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="groupId">
+			<item value="RehlatiParent"/>
+		</list>
+		<list key="package">
+			<item value="com.rehlati.remote"/>
+			<item value="org.RehlatiRemote"/>
+			<item value="org.RehlatiClient"/>
+			<item value="org.RehlatiWeb2"/>
+		</list>
+		<list key="artifactId">
+			<item value="RehlatiRemote"/>
+			<item value="RehlatiClient"/>
+			<item value="RehlatiWeb2"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.ui.internal.wizards.MavenProjectSelectionDialog">
+		<item value="450" key="height"/>
+		<item value="480" key="width"/>
+		<item value="83" key="y"/>
+		<item value="339" key="x"/>
+	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="RehlatiParent"/>
+			<item value="FacesTest"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="Rehlati"/>
+			<item value="FacesTest"/>
+			<item value="RehlatiWeb"/>
+			<item value="RehlatiEAR"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenModuleWizardParentPage">
+		<list key="moduleName">
+			<item value="RehlatiRemote"/>
+			<item value="RehlatiClient"/>
+			<item value="RehlatiWeb2"/>
+			<item value="RehlatiEJB"/>
+			<item value="AirportIntegration"/>
+			<item value="CreditCardIntegration"/>
+			<item value="RehllatiEAR"/>
+			<item value="Reh"/>
+			<item value="RehlatiEAR"/>
+			<item value="RehlatiWeb"/>
+			<item value="TranslatorIntegration"/>
+			<item value="WeatherIntegration"/>
+			<item value="SunSetSunRiseIntegration"/>
+			<item value="CurrencyIntegration"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="RehlatiParent"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="RehlatiRemote"/>
+			<item value="RehlatiParent"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,5 @@
+package com.rehlati.client.beans;
+
+public class Airport {
+
+}

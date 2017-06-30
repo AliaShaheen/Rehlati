@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+ <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ets="http://java.sun.com/jsf/composite/ets"
+       lang="en">
+       
+	<ui:include src="header.xhtml" />
+	<body>
+	 <div id="body-bg">
+		<ui:include src="menu.html" />
+            <!-- === BEGIN CONTENT === -->
+            <div id="content">
+                <div class="container background-white">
+                    <div class="row margin-vert-30">
+                        <!-- Main Column -->
+                        <div class="col-md-9">
+                            <!-- Main Content -->
+                            <div class="headline">
+                                <h2>Contact Form</h2>
+                            </div>
+                            <p>Thank you for visiting REHLATI! Please complete the form below, so we can provide quick and efficient service.</p>
+                            <br/>
+                            <!-- Contact Form -->
+                            <form>
+                                <label>Name</label>
+                                <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <input class="form-control" type="text"/>
+                                    </div>
+                                </div>
+                                <label>Email
+                                    <span class="color-red">*</span>
+                                </label>
+                                <div class="row margin-bottom-20">
+                                    <div class="col-md-6 col-md-offset-0">
+                                        <input class="form-control" type="text"/>
+                                    </div>
+                                </div>
+                                <label>Message</label>
+                                <div class="row margin-bottom-20">
+                                    <div class="col-md-8 col-md-offset-0">
+                                        <textarea rows="8" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <p>
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                </p>
+                            </form>
+                            <!-- End Contact Form -->
+                            <!-- End Main Content -->
+                        </div>
+                        <!-- End Main Column -->
+                        <!-- Side Column -->
+                        <div class="col-md-3">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Contact Info</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <i class="fa-phone color-primary"></i>+962-000000000</li>
+                                        <li>
+                                            <i class="fa-envelope color-primary"></i>shaheen_alia@hotmail.com</li>
+                                    </ul>
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <strong class="color-primary">Sunday-Thursday:</strong>9am to 5pm</li>
+                                        <li>
+                                            <strong class="color-primary">Saturday:</strong>10am to 2pm</li>
+                                        <li>
+                                            <strong class="color-primary">Friday:</strong>Closed</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Side Column -->
+                    </div>
+                </div>
+            </div>
+            <!-- === END CONTENT === -->
+            <!-- === BEGIN FOOTER === -->
+			<ui:include src="footer.xhtml" />
+			<!-- === END FOOTER === -->
+         </div>
+    </body>
+</html>

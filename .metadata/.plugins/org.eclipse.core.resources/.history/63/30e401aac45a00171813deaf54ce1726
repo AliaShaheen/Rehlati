@@ -1,0 +1,15 @@
+package com.rehlati.servicelocator;
+
+import java.io.Serializable;
+
+import com.rehlati.remote.RehaltiEJBRemote;
+
+public class ServiceLocator implements Serializable{
+
+
+	private String lookupString= "java:comp/env/ejb/";
+	
+	private RehaltiEJBRemote rehaltiEJBRemote;
+
+	
+}

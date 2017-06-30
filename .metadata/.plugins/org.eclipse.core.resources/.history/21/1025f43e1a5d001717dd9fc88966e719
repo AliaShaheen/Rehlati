@@ -1,0 +1,80 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:include src="primafacesHeader.xhtml" />
+<body>
+	<div id="body-bg">
+		<ui:include src="menu.html" />
+		<!-- === BEGIN CONTENT === -->
+		<div id="content">
+			<div styleClass="container background-white">
+				<div styleClass="row margin-vert-30">
+					<div styleClass="col-md-8 col-md-offset-3 col-sm-offset-3">
+							<div styleClass="headline">
+								<h2>Sunset and Sunrise Service</h2>
+								<p>Dont miss such a great moment in your trip, be prepared 
+									by knowing sunrise and sunset time to be there.</p>
+								<p>Get Sunset and Sunrise time for any location in the
+									world.</p>
+
+							</div>
+							<br />
+
+							<h:form styleClass="search-page" id="results">
+								<h:outputLabel value="Country" />
+								<div styleClass="row margin-bottom-20">
+									<div styleClass="col-md-6 col-md-offset-0">
+										<p:inputText styleClass="form-control margin-bottom-10"
+											value="#{sunServiceAction.country}" />
+									</div>
+								</div>
+
+								<h:outputLabel value="Date" />
+								<div styleClass="row margin-bottom-20">
+									<div styleClass="col-md-6 col-md-offset-0">
+										<p:calendar id="date" value="#{sunServiceAction.tripDate}"
+											showOn="button" mindate="today" />
+									</div>
+								</div>
+
+								<p>
+									<p:commandButton action="#{sunServiceAction.search()}"
+										styleClass="btn btn-primary" value="Submit" update="results" />
+								</p>
+
+								<h:outputText rendered="#{sunServiceAction.sunriseTime != null}"
+									value="SunriseTime" />
+								<div styleClass="row margin-bottom-20">
+									<div styleClass="col-md-6 col-md-offset-0">
+										<h:outputText styleClass="form-control margin-bottom-10"
+											rendered="#{sunServiceAction.sunriseTime != null}"
+											value="#{sunServiceAction.sunriseTime}" />
+									</div>
+								</div>
+
+
+								<h:outputText rendered="#{sunServiceAction.sunsetTime != null}"
+									value="SunsetTime" />
+								<div styleClass="row margin-bottom-20">
+									<div styleClass="col-md-6 col-md-offset-0">
+										<h:outputText styleClass="form-control margin-bottom-10"
+											rendered="#{sunServiceAction.sunsetTime != null}"
+											value="#{sunServiceAction.sunsetTime}" />
+									</div>
+								</div>
+							</h:form>
+
+					</div>
+					<!-- End Main Column -->
+				</div>
+			</div>
+		</div>
+		<!-- === END CONTENT === -->
+		<!-- === BEGIN FOOTER === -->
+		<ui:include src="footer.xhtml" />
+		<!-- === END FOOTER === -->
+	</div>
+</body>
+</html>

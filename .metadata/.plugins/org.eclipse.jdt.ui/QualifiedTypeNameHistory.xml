@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.ResourceBundle"/>
+<fullyQualifiedTypeName name="com.rehlati.client.beans.HotelInfo"/>
+<fullyQualifiedTypeName name="com.rehlati.client.beans.OfferDateRange"/>
+<fullyQualifiedTypeName name="com.rehlati.client.beans.Destination"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="javax.ejb.Remote"/>
+<fullyQualifiedTypeName name="com.rehlati.remote.RehaltiEJBRemote"/>
+<fullyQualifiedTypeName name="javax.inject.Named"/>
+<fullyQualifiedTypeName name="com.rehlati.servicelocator.ServiceLocator"/>
+<fullyQualifiedTypeName name="com.rehlati.remote.RehlatiEJBRemote"/>
+<fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="com.rehlati.ejb.util.RehlatiConfiguration"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="com.rehlati.ejb.RehlatiEJB"/>
+<fullyQualifiedTypeName name="javax.xml.bind.JAXBContext"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.rehlati.client.beans.Airports"/>
+<fullyQualifiedTypeName name="com.rehlati.client.beans.Airport"/>
+<fullyQualifiedTypeName name="NET.webserviceX.www.GlobalWeatherSoap"/>
+</qualifiedTypeNameHistroy>

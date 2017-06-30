@@ -1,0 +1,116 @@
+package com.rehlati.payment;
+
+import java.io.Serializable;
+import java.rmi.RemoteException;
+
+import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
+
+import com.rehlati.client.exceptions.InvalidCardNumberException;
+import com.rehlati.ejb.RehlatiEJB;
+
+
+/*
+ * @author alias
+ */
+
+@ManagedBean(name="paymentAction")
+@ViewScoped
+public class PaymentAction implements Serializable{
+	
+	
+	private String firstName = "Alia";
+	private String lastName = "Shahin";
+	private String cardType = "Visa";
+	private String cardNumber = "4444777788885555";
+	private String cvv = "1234";
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4819441530757676455L;
+
+
+	@PostConstruct
+    public void init() {
+    	System.out.println("PaymentAction.init()");
+    }
+
+
+	 /**
+     * The method in the action that will do the work!
+     */
+	public void pay(){
+		System.out.println("PayAction.pay() ...  Here we go!");
+		RehlatiEJB rehlatiEJB = new RehlatiEJB();
+		try {
+			rehlatiEJB.callCheckCreditCardService(cardType, cardNumber);
+		} catch (RemoteException e) {
+	        FacesMessage message = new FacesMessage("Check Card Service is not available, please try again later");
+	        message .setSeverity(FacesMessage.SEVERITY_ERROR);
+	        FacesContext.getCurrentInstance().addMessage(null, message);		
+		} catch (InvalidCardNumberException e) {
+			FacesMessage message = new FacesMessage(e.getMessage());
+	        message .setSeverity(FacesMessage.SEVERITY_ERROR);
+	        FacesContext.getCurrentInstance().addMessage(null, message);
+		}
+	}
+
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+
+	public String getLastName() {
+		return lastName;
+	}
+
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+
+	public String getCardType() {
+		return cardType;
+	}
+
+
+	public void setCardType(String cardType) {
+		this.cardType = cardType;
+	}
+
+
+	public String getCardNumber() {
+		return cardNumber;
+	}
+
+
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
+	}
+
+
+	public String getCvv() {
+		return cvv;
+	}
+
+
+	public void setCvv(String cvv) {
+		this.cvv = cvv;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+}

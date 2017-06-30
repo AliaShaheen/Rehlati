@@ -1,0 +1,92 @@
+package com.rehlati.services;
+
+import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.util.Calendar;
+import java.util.Date;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
+
+import NET.webserviceX.www.LatLonDate;
+
+import com.rehlati.remote.RehaltiEJBRemote;
+import com.rehlati.servicelocator.ServiceLocator;
+
+
+/*
+ * @author alias
+ */
+
+@ManagedBean(name="sunServiceAction")
+@ViewScoped
+public class SunServiceAction implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3889859617234059038L;
+	
+	@Inject
+	ServiceLocator serviceLocator;
+	private RehaltiEJBRemote rehlatiEJB;
+	
+	private Date tripDate;
+	
+	
+	     
+//	    public void onDateSelect(SelectEvent event) {
+//	    	System.out.println("SunServiceAction.onDateSelect()///////////////*************----------------");
+//	        FacesContext facesContext = FacesContext.getCurrentInstance();
+//	        SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+//	        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Date Selected", format.format(event.getObject())));
+//	    }
+//	     
+//	    public void click() {
+//	        RequestContext requestContext = RequestContext.getCurrentInstance();
+//	         
+//	        requestContext.update("form:display");
+//	        requestContext.execute("PF('dlg').show()");
+//	    }
+	
+	 @PostConstruct
+	    public void init() {
+		 rehlatiEJB = serviceLocator.getRehaltiEJBRemote();
+	    	System.out.println("SearchHotelsAction.init()");
+	    }
+
+
+		 /**
+	     * The method in the action that will do the work!
+	     */
+		public void search(){
+			System.out.println("SunServiceAction.search() ...  Here we go!");
+
+			Calendar cal = Calendar.getInstance();
+			cal.setTime(getTripDate());
+			try {
+				LatLonDate time = rehlatiEJB.callSunService(cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH), cal.get(Calendar.YEAR));
+			} catch (RemoteException e) {
+				System.out.println("SunServiceAction.search(), unable to connect");
+				e.printStackTrace();
+			}
+			
+		}
+
+
+		public Date getTripDate() {
+			return tripDate;
+		}
+
+
+		public void setTripDate(Date tripDate) {
+			this.tripDate = tripDate;
+		}
+
+	
+
+	 
+	    
+}

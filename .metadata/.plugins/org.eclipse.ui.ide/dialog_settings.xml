@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.dialogs.FilteredResourcesSelectionDialog">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="false" key="ShowDerived"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;workingSet workingSetName=&quot;&quot;/&gt;" key="WorkingSet"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiParent/pom.xml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiParent/SunSetSunRiseIntegration/src/main/java/NET/webserviceX/www/SunSetRiseServiceSoapProxy.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/CreditCardIntegration/src/main/java/net/webservicex/www/CCCheckerSoapProxy.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiParent/CreditCardIntegration/src/main/java/net/webservicex/www/CCCheckerSoapProxy.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiParent/AirportIntegration/src/main/java/NET/webserviceX/www/AirportSoapProxy.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/AirportIntegration/src/main/java/NET/webserviceX/www/AirportSoapProxy.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiParent/CurrencyIntegration/src/main/java/NET/webserviceX/www/CurrencyConvertorSoapProxy.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/SunSetSunRiseIntegration/src/main/resources/wsdl/sunsetrise.wsdl&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiParent/RehlatiEJB/src/main/java/com/rehlati/ejb/http/client/HttpRequestClient.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiParent/SunSetSunRiseIntegration/target/classes/NET/webserviceX/www/SunSetRiseServiceSoapProxy.class&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/SunSetSunRiseIntegration/src/main/java/NET/webserviceX/www/SunSetRiseServiceSoapProxy.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiEJB/pom.xml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/src/com/rehlati/search/trips/SearchHotelsAction.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/.project&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/pom.xml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiParent/SunSetSunRiseIntegration/src/main/java/NET/webserviceX/www/LatLonDate.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/src/com/rehlati/services/SunServiceAction.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/WebContent/searchHotels.xhtml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/WeatherIntegration/src/main/java/NET/webserviceX/www/GlobalWeatherSoap.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiParent/RehlatiEJB/src/main/java/com/rehlati/ejb/App.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/src/com/rehlati/payment/PaymentAction.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/WebContent/weatherService.xhtml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/src/com/rehlati/services/WeatherServiceAction.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/WebContent/airportService.xhtml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiParent/RehlatiClient/target/classes/com/rehlati/client/beans/HotelSearchCritieria.class&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/WebContent/sunService.xhtml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiParent/RehlatiClient/src/main/java/com/rehlati/client/beans/Airport.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/src/com/rehlati/services/AirportServiceAction.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/Servers/Tomcat v7.0 Server at localhost-config/web.xml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/WebContent/WEB-INF/web.xml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/WebContent/header.xhtml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/WebContent/primafacesHeader.xhtml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/WebContent/index.xhtml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/WebContent/contact.xhtml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/WebContent/menu.html&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiWeb/WebContent/bookAndPay.xhtml&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;infoNode path=&quot;/RehlatiEJB/src/main/java/com/rehlati/ejb/RehlatiEJB.java&quot; type=&quot;1&quot;/&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="600" key="DIALOG_WIDTH"/>
+			<item value="39" key="DIALOG_Y_ORIGIN"/>
+			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="391" key="DIALOG_X_ORIGIN"/>
+			<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
+		</section>
+	</section>
+	<section name="BasicNewProjectResourceWizard">
+	</section>
+	<section name="CleanDialogSettings">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="112" key="DIALOG_Y_ORIGIN"/>
+		<item value="378" key="DIALOG_HEIGHT"/>
+		<item value="433" key="DIALOG_X_ORIGIN"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.eclipse.ui.wizards.new.project" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.eclipse.ui.Basic"/>
+			<item value="org.eclipse.team.cvs.ui.newWizards"/>
+			<item value="org.eclipse.emf.codegen.ecore.ui.wizardCategory"/>
+			<item value="org.eclipse.jst.ejb.ui"/>
+			<item value="org.eclipse.jdt.ui.java"/>
+			<item value="org.eclipse.jst.j2ee.internal"/>
+			<item value="org.eclipse.wst.jsdt.ui.java"/>
+			<item value="org.eclipse.jpt.jaxb"/>
+			<item value="org.eclipse.jpt.jpa"/>
+			<item value="org.eclipse.m2e"/>
+			<item value="org.eclipse.pde.PDE"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,79 @@
+/**
+ * 
+ */
+package com.rehlati.ejb.http.client;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.net.URLConnection;
+import java.nio.charset.Charset;
+
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.hotels.beans.Offers;
+
+/*
+ * @author alias
+ */
+public class HttpRequestClient {
+
+	public Offers sendRequest(String urlValue, String query) {
+
+		Offers res = null;
+		String strResult = "";
+		String URL  = urlValue + query ;
+		try {
+			System.out.println("Requeted URL:" + URL );
+			
+			StringBuilder sb = new StringBuilder();
+			URLConnection urlConn = null;
+			InputStreamReader in = null;
+			try {
+				//send get request with the criteria and get the desire results 
+				URL url = new URL(urlValue + query);
+				
+				//establish the connection
+				urlConn = url.openConnection();
+				if (urlConn != null)
+					urlConn.setReadTimeout(60 * 1000);
+				if (urlConn != null && urlConn.getInputStream() != null) {
+					in = new InputStreamReader(urlConn.getInputStream(),Charset.defaultCharset());
+					BufferedReader bufferedReader = new BufferedReader(in);
+					if (bufferedReader != null) {
+						int cp;
+						while ((cp = bufferedReader.read()) != -1) {sb.append((char) cp);
+						}
+						bufferedReader.close();
+					}
+				}
+				//close the connection
+				in.close();
+			} catch (Exception e) {
+				throw new RuntimeException("Exception while calling URL:" + URL,e);
+			}
+
+			strResult = sb.toString();
+			//Parse JSON response to my response bean.
+			res = getResponseBeanFromJsonString(strResult, Offers.class);
+		} catch (Exception e) {
+			System.out.println("An error while parsing a response from the Expedia");
+		}
+		return res;
+	}
+
+
+	private <T> T getResponseBeanFromJsonString(String jsonString,
+			Class<T> classType) throws JsonParseException,JsonMappingException, IOException {
+
+		//Map the JSON string we got from Expedia URL to our response bean 
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES,false);
+		T bean = mapper.readValue(jsonString, classType);
+		return bean;
+
+	}
+}

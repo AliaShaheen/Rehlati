@@ -1,0 +1,124 @@
+package com.rehlati.client.beans;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Airport {
+	
+private String AirportCode;
+private String CityOrAirportName;
+private String Country;
+private String CountryAbbrviation;
+private String CountryCode;
+private String GMTOffset;
+private String RunwayLengthFeet;
+private String RunwayElevationFeet;
+private String LatitudeDegree;
+private String LatitudeMinute;
+private String LatitudeSecond;
+private String LatitudeNpeerS;
+private String LongitudeDegree;
+private String LongitudeMinute;
+private String LongitudeSeconds;
+private String LongitudeEperW;
+
+
+public String getAirportCode() {
+	return AirportCode;
+}
+public void setAirportCode(String airportCode) {
+	AirportCode = airportCode;
+}
+public String getCityOrAirportName() {
+	return CityOrAirportName;
+}
+public void setCityOrAirportName(String cityOrAirportName) {
+	CityOrAirportName = cityOrAirportName;
+}
+public String getCountry() {
+	return Country;
+}
+public void setCountry(String country) {
+	Country = country;
+}
+public String getCountryAbbrviation() {
+	return CountryAbbrviation;
+}
+public void setCountryAbbrviation(String countryAbbrviation) {
+	CountryAbbrviation = countryAbbrviation;
+}
+public String getCountryCode() {
+	return CountryCode;
+}
+public void setCountryCode(String countryCode) {
+	CountryCode = countryCode;
+}
+public String getGMTOffset() {
+	return GMTOffset;
+}
+public void setGMTOffset(String gMTOffset) {
+	GMTOffset = gMTOffset;
+}
+public String getRunwayLengthFeet() {
+	return RunwayLengthFeet;
+}
+public void setRunwayLengthFeet(String runwayLengthFeet) {
+	RunwayLengthFeet = runwayLengthFeet;
+}
+public String getRunwayElevationFeet() {
+	return RunwayElevationFeet;
+}
+public void setRunwayElevationFeet(String runwayElevationFeet) {
+	RunwayElevationFeet = runwayElevationFeet;
+}
+public String getLatitudeDegree() {
+	return LatitudeDegree;
+}
+public void setLatitudeDegree(String latitudeDegree) {
+	LatitudeDegree = latitudeDegree;
+}
+public String getLatitudeMinute() {
+	return LatitudeMinute;
+}
+public void setLatitudeMinute(String latitudeMinute) {
+	LatitudeMinute = latitudeMinute;
+}
+public String getLatitudeSecond() {
+	return LatitudeSecond;
+}
+public void setLatitudeSecond(String latitudeSecond) {
+	LatitudeSecond = latitudeSecond;
+}
+public String getLatitudeNpeerS() {
+	return LatitudeNpeerS;
+}
+public void setLatitudeNpeerS(String latitudeNpeerS) {
+	LatitudeNpeerS = latitudeNpeerS;
+}
+public String getLongitudeDegree() {
+	return LongitudeDegree;
+}
+public void setLongitudeDegree(String longitudeDegree) {
+	LongitudeDegree = longitudeDegree;
+}
+public String getLongitudeMinute() {
+	return LongitudeMinute;
+}
+public void setLongitudeMinute(String longitudeMinute) {
+	LongitudeMinute = longitudeMinute;
+}
+public String getLongitudeSeconds() {
+	return LongitudeSeconds;
+}
+public void setLongitudeSeconds(String longitudeSeconds) {
+	LongitudeSeconds = longitudeSeconds;
+}
+public String getLongitudeEperW() {
+	return LongitudeEperW;
+}
+public void setLongitudeEperW(String longitudeEperW) {
+	LongitudeEperW = longitudeEperW;
+}
+
+}

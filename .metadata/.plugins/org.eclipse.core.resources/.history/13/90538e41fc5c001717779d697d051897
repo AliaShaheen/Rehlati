@@ -1,0 +1,70 @@
+package com.rehlati.services;
+
+import java.io.Serializable;
+import java.rmi.RemoteException;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.view.ViewScoped;
+import javax.xml.bind.JAXBException;
+
+import com.rehlati.client.beans.Airports;
+import com.rehlati.ejb.RehlatiEJB;
+
+/*
+ * @author alias
+ */
+
+@ManagedBean(name = "airportServiceAction")
+@ViewScoped
+public class AirportServiceAction implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7931851656891087833L;
+
+	private RehlatiEJB rehlatiEJB = new RehlatiEJB();
+
+	private Airports airports;
+	private String country = "Jordan";
+
+	@PostConstruct
+	public void init() {
+		System.out.println("AirportServiceAction.init()");
+	}
+
+	/**
+	 * The method in the action that will do the work!
+	 */
+	public void search() {
+		System.out.println("AirportServiceAction.search() ...  Here we go!");
+
+		try {
+			setAirports(rehlatiEJB
+					.callAirportServiceGetAirportsByCountry(getCountry()));
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public Airports getAirports() {
+		return airports;
+	}
+
+	public void setAirports(Airports airports) {
+		this.airports = airports;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+}

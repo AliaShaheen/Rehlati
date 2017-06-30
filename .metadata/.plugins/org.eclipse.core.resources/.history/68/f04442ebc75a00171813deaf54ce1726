@@ -1,0 +1,33 @@
+package com.rehlati.servicelocator;
+
+import java.io.Serializable;
+
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
+import com.rehlati.remote.RehaltiEJBRemote;
+
+@Named 
+public class ServiceLocator implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4469150241994267366L;
+
+	private String lookupString= "java:comp/env/ejb/";
+	
+	private RehaltiEJBRemote rehaltiEJBRemote;
+
+	
+	public RehaltiEJBRemote getRehaltiEJBRemote() {
+		try {
+			rehaltiEJBRemote=(RehaltiEJBRemote) (new InitialContext())
+					.lookup(lookupString + "UpdateMOEInfoEJB");
+		} catch (NamingException e) {
+			e.printStackTrace();
+		}
+		return rehaltiEJBRemote;
+	}
+	
+}

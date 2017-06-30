@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<ui:include src="primafacesHeader.xhtml" />
+<!-- Bootstrap -->
+<h:outputStylesheet name="bootstrap.css" library="css" />
+<h:outputStylesheet name="bootstrap.min.css" library="css" />
+<body>
+	<div id="body-bg">
+		<ui:include src="menu.html" />
+		<!-- === BEGIN CONTENT === -->
+		<div id="content">
+			<div styleClass="container background-white">
+				<div styleClass="row margin-vert-30">
+					<div styleClass="col-md-8 col-md-offset-3 col-sm-offset-3">
+						<div styleClass="headline">
+							<h2>Search for a hotel</h2>
+						</div>
+						<br />
+
+						<h:form styleClass="search-page">
+							<h:outputLabel value="Destination" />
+							<div styleClass="row margin-bottom-20">
+								<div styleClass="col-md-6 col-md-offset-0">
+									<p:inputText styleClass="form-control margin-bottom-10"
+										id="destinationName"
+										value="#{searchHotelsAction.searchCriteria.destinationName}" />
+								</div>
+							</div>
+							<div styleClass="row">
+								<div styleClass="col-sm-6">
+									<p:outputLabel for="buttonStart" value="Check-in" />
+									<div styleClass="row margin-bottom-20">
+										<div styleClass="col-md-6 col-md-offset-0">
+
+											<p:calendar id="buttonStart"
+												value="#{searchHotelsAction.searchCriteria.startDate}"
+												showOn="button" mindate="today" />
+
+										</div>
+									</div>
+								</div>
+								<div styleClass="col-sm-6">
+									<p:outputLabel for="button" value="Check-out" />
+									<div styleClass="row margin-bottom-20">
+										<div styleClass="col-md-6 col-md-offset-0">
+											<p:calendar id="button"
+												value="#{searchHotelsAction.searchCriteria.endDate}"
+												showOn="button" mindate="today" />
+										</div>
+									</div>
+								</div>
+							</div>
+							<div styleClass="row">
+								<div styleClass="col-sm-6">
+									<h:outputLabel value="Minimum hotel stars" />
+									<div styleClass="row margin-bottom-20">
+										<p:selectOneRadio id="customMinStarts"
+											value="#{searchHotelsAction.searchCriteria.starMin}"
+											layout="custom">
+											<f:selectItem itemLabel="5" itemValue="5.0" />
+											<f:selectItem itemLabel="4" itemValue="4.0" />
+											<f:selectItem itemLabel="3" itemValue="3.0" />
+											<f:selectItem itemLabel="2" itemValue="2.0" />
+											<f:selectItem itemLabel="1" itemValue="1.0" />
+										</p:selectOneRadio>
+
+										<h:panelGrid columns="2" cellpadding="5">
+											<p:radioButton id="minStar1" for="customMinStarts"
+												itemIndex="0" />
+											<h:graphicImage for="minStar1"
+												value="resources/img/raiting/5stars.png" />
+
+											<p:radioButton id="minStar2" for="customMinStarts"
+												itemIndex="1" />
+											<h:graphicImage for="minStar2"
+												value="resources/img/raiting/4stars.png" />
+
+											<p:radioButton id="minStar3" for="customMinStarts"
+												itemIndex="2" />
+											<h:graphicImage for="minStar3"
+												value="resources/img/raiting/3stars.png" />
+
+											<p:radioButton id="minStar4" for="customMinStarts"
+												itemIndex="3" />
+											<h:graphicImage for="minStar4"
+												value="resources/img/raiting/2stars.png" />
+
+											<p:radioButton id="minStar5" for="customMinStarts"
+												itemIndex="4" />
+											<h:graphicImage for="minStar5"
+												value="resources/img/raiting/1star.png" />
+										</h:panelGrid>
+									</div>
+								</div>
+								<div styleClass="col-sm-6">
+									<h:outputLabel value="Maximum hotel stars" />
+									<div styleClass="row margin-bottom-20">
+										<p:selectOneRadio id="customMaxStarts"
+											value="#{searchHotelsAction.searchCriteria.starMax}"
+											layout="custom">
+											<f:selectItem itemLabel="5" itemValue="5.0" />
+											<f:selectItem itemLabel="4" itemValue="4.0" />
+											<f:selectItem itemLabel="3" itemValue="3.0" />
+											<f:selectItem itemLabel="2" itemValue="2.0" />
+											<f:selectItem itemLabel="1" itemValue="1.0" />
+										</p:selectOneRadio>
+
+										<h:panelGrid columns="2" cellpadding="5">
+											<p:radioButton id="maxStar1" for="customMaxStarts"
+												itemIndex="0" />
+											<h:graphicImage for="maxStar1"
+												value="resources/img/raiting/5stars.png" />
+
+											<p:radioButton id="maxStar2" for="customMaxStarts"
+												itemIndex="1" />
+											<h:graphicImage for="maxStar2"
+												value="resources/img/raiting/4stars.png" />
+
+											<p:radioButton id="maxStar3" for="customMaxStarts"
+												itemIndex="2" />
+											<h:graphicImage for="maxStar3"
+												value="resources/img/raiting/3stars.png" />
+
+											<p:radioButton id="maxStar4" for="customMaxStarts"
+												itemIndex="3" />
+											<h:graphicImage for="maxStar4"
+												value="resources/img/raiting/2stars.png" />
+
+											<p:radioButton id="maxStar5" for="customMaxStarts"
+												itemIndex="4" />
+											<h:graphicImage for="maxStar5"
+												value="resources/img/raiting/1star.png" />
+										</h:panelGrid>
+									</div>
+								</div>
+							</div>
+
+							<p>
+								<p:commandButton styleClass="btn btn-primary"
+									action="#{searchHotelsAction.search()}"
+									value="Search For Hotel" update="results" />
+							</p>
+						</h:form>
+					</div>
+				</div>
+			</div>
+			<div styleClass="container background-white">
+				<div styleClass="row margin-vert-30">
+		<p:panel id="results" header="Offers for your search"
+			style="margin-bottom:20px">
+
+			<h:panelGrid columns="2" cellpadding="10">
+
+				<div styleClass="row">
+					<h:form id="searchTable">
+						<div styleClass="col-lg-12">
+							<div styleClass="ibox float-e-margins">
+								<div styleClass="ibox-content">
+									<div style="overflow-x: scroll;">
+										<p:dataTable id="offersList"
+											value="#{searchHotelsAction.hotel}" var="result"
+											emptyMessage="No data found"
+											tableStylestyleClass="table table-striped table-bordered table-hover">
+
+											<p:column headerText="Hotel Image" styleClass="col-xs-6 col-sm-3">
+
+												<p:commandButton id="imageBtn" value="View"
+													type="button" />
+												<p:overlayPanel id="imagePanel" for="imageBtn"
+													hideEffect="fade">
+													<p:graphicImage value="#{result.hotelInfo.hotelImageUrl}"
+														width="250" />
+												</p:overlayPanel>
+											</p:column>
+											<p:column headerText="City" styleClass="col-xs-6 col-sm-3">
+												<h:outputLabel value="#{result.destination.city}" />
+											</p:column>
+											<p:column headerText="Hotel Name" styleClass="col-xs-6 col-sm-3">
+												<h:outputLabel value="#{result.hotelInfo.hotelName}" />
+											</p:column>
+											<p:column headerText="Hotel Location" styleClass="col-xs-6 col-sm-3">
+												<h:outputLink  styleClass="fa-link"  value="#{result.hotelInfo.hotelLocation}"
+													target="_blank">View Location</h:outputLink>
+											</p:column>
+											<p:column headerText="Total Price Value" styleClass="col-xs-6 col-sm-3">
+												<h:outputLabel
+													value="#{result.hotelPricingInfo.totalPriceValue} $" />
+											</p:column>
+											<p:column headerText="Length Of Stay" styleClass="col-xs-6 col-sm-3">
+												<h:outputLabel
+													value="#{result.offerDateRange.lengthOfStay} days" />
+											</p:column>
+
+										</p:dataTable>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</h:form>
+				</div>
+			</h:panelGrid>
+		</p:panel>
+		</div>
+		</div>
+		</div>
+		
+		<!-- === BEGIN FOOTER === -->
+		<ui:include src="footer.xhtml" />
+		<!-- === END FOOTER === -->
+	</div>
+</body>
+</html>

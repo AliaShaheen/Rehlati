@@ -1,0 +1,43 @@
+package com.rehlati.payment;
+
+import java.io.Serializable;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.view.ViewScoped;
+
+
+/*
+ * @author alias
+ */
+
+@ManagedBean(name="payAction")
+@ViewScoped
+public class PaymentAction implements Serializable{
+	
+	
+	private String firstName;
+	private String lastName;
+	private String cardType;
+	private String cardNumber;
+	private String cvv;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 4819441530757676455L;
+
+
+	@PostConstruct
+    public void init() {
+    	System.out.println("PaymentAction.init()");
+    }
+
+
+	 /**
+     * The method in the action that will do the work!
+     */
+	public void search(){
+		System.out.println("SearchHotelsAction.search() ...  Here we go!");
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.rehlati.ejb.util;
+
+public class RehlatiConfiguration {
+
+}

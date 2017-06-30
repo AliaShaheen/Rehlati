@@ -1,0 +1,79 @@
+package com.rehlati.ejb;
+
+import java.rmi.RemoteException;
+
+import javax.ejb.Stateless;
+
+import net.webservicex.www.CCCheckerSoapProxy;
+import NET.webserviceX.www.AirportSoapProxy;
+import NET.webserviceX.www.LatLonDate;
+import NET.webserviceX.www.SunSetRiseServiceSoapProxy;
+
+import com.rehlati.ejb.util.RehlatiConfiguration;
+import com.rehlati.remote.RehlatiEJBRemote;
+
+
+@Stateless(mappedName = "ejb/RehlatiEJB")
+	
+public class RehlatiEJB implements RehlatiEJBRemote{
+
+	public LatLonDate callSunService(int day, int month, int year)
+			throws RemoteException {
+    	// init config 
+    	RehlatiConfiguration config = new RehlatiConfiguration();
+    	//init the service
+    	SunSetRiseServiceSoapProxy sunService = new SunSetRiseServiceSoapProxy(config.getSUNSET_SUNRISE_INTEGRATION_URL());
+    	
+    	//fill the request
+    	LatLonDate serviceRequest = new LatLonDate();
+    	serviceRequest.setLatitude(0);
+    	serviceRequest.setLongitude(0);
+    	serviceRequest.setTimeZone(0);
+    	serviceRequest.setDay(day);
+    	serviceRequest.setMonth(month);
+    	serviceRequest.setYear(year);
+    	serviceRequest.setSunRiseTime(0);
+
+    	LatLonDate serviceResponse = new LatLonDate();
+    	//call the service and get the needed response
+    	serviceResponse = sunService.getSunSetRiseTime(serviceRequest);
+    	return serviceResponse;
+    }
+
+	public String callCheckCreditCardService(String cardType, String cardNumber)
+			throws RemoteException {
+    	// init config 
+    	RehlatiConfiguration config = new RehlatiConfiguration();
+    	//init the service
+    	CCCheckerSoapProxy service = new CCCheckerSoapProxy(config.getCREDIT_CARD_INTEGRATION_URL());
+    	
+    	//call the service with the request params and get the needed response
+    	String validateResult = service.validateCardNumber(cardType, cardNumber);
+    	return validateResult;
+    }
+
+	public String callAirportServiceGetAirportInfoByCode(String airportCode)
+			throws RemoteException {
+    	// init config 
+    	RehlatiConfiguration config = new RehlatiConfiguration();
+    	//init the service
+    	AirportSoapProxy service = new AirportSoapProxy(config.getAIRPORT_INTEGRATION_URL());
+    	
+    	//call the service with the request params and get the needed response
+    	String airportInfoResult = service.getAirportInformationByAirportCode(airportCode);
+    	return airportInfoResult;
+    }
+
+	public String callAirportServiceGetAirportsByCountry(String countryName)
+			throws RemoteException {
+    	// init config 
+    	RehlatiConfiguration config = new RehlatiConfiguration();
+    	//init the service
+    	AirportSoapProxy service = new AirportSoapProxy(config.getAIRPORT_INTEGRATION_URL());
+    	
+    	//call the service with the request params and get the needed response
+    	String airportInfoResult = service.getAirportInformationByCountry(countryName);
+    	return airportInfoResult;
+    }
+
+}

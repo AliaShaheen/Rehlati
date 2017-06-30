@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.jst.ws.client.type.java">
+		<item value="/AirportIntegration/src/main/resources/wsdl/airport.wsdl"/>
+		<item value="/CreditCardIntegration/src/main/resources/wsdl/CreditCard.wsdl"/>
+		<item value="/CurrencyIntegration/src/main/resources/wsdl/CurrencyConvertor.wsdl"/>
+		<item value="/SunSetSunRiseIntegration/src/main/resources/wsdl/sunsetrise.wsdl"/>
+		<item value="/TranslatorIntegration/src/main/resources/wsdl/TranslateService.wsdl"/>
+		<item value="/WeatherIntegration/src/main/resources/wsdl/globalweather.wsdl"/>
+	</list>
+</section>

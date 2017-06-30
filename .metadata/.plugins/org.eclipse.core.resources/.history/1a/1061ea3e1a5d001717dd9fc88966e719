@@ -1,0 +1,99 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:include src="primafacesHeader.xhtml" />
+<body>
+	<div id="body-bg">
+		<ui:include src="menu.html" />
+		<!-- === BEGIN CONTENT === -->
+
+		<div id="content">
+			<div styleClass="container background-white">
+				<div styleClass="row margin-vert-30">
+					<div styleClass="col-md-8 col-md-offset-3 col-sm-offset-3">
+
+						<div styleClass="headline">
+							<h2>Airport Info Service</h2>
+							<p>Discover the countries Airports and infos</p>
+
+
+						</div>
+						<br />
+						<h:form styleClass="search-page">
+							<h:outputLabel value="Country" />
+							<div styleClass="row margin-bottom-20">
+								<div styleClass="col-md-6 col-md-offset-0">
+									<p:inputText styleClass="form-control margin-bottom-20"
+										value="#{airportServiceAction.country}" />
+								</div>
+							</div>
+
+							<p>
+								<p:commandButton action="#{airportServiceAction.search()}"
+									value="Submit" update="results" styleClass="btn btn-primary" />
+							</p>
+
+
+						</h:form>
+					</div>
+				</div>
+			</div>
+			<div styleClass="container background-white">
+				<div styleClass="row margin-vert-30">
+					<p:panel id="results" header="Airports" style="margin-bottom:20px">
+						<h:panelGrid columns="2" cellpadding="10" header="Airports">
+
+							<div styleClass="row">
+								<h:form id="searchTable">
+									<div styleClass="col-lg-12">
+										<div styleClass="ibox float-e-margins">
+											<div styleClass="ibox-content">
+												<div style="overflow-x: scroll;">
+													<p:dataTable id="airports"
+														value="#{airportServiceAction.airports}" var="airport"
+														emptyMessage="No data found"
+														tableStylestyleClass="table table-striped table-bordered table-hover">
+
+														<p:column headerText="Airport Name"
+															styleClass="col-xs-6 col-sm-3">
+															<h:outputLabel value="#{airport.cityOrAirportName}" />
+														</p:column>
+														<p:column headerText="Airport Code"
+															styleClass="col-xs-6 col-sm-3">
+															<h:outputLabel value="#{airport.airportCode}" />
+														</p:column>
+														<p:column headerText="Country" styleClass="col-xs-6 col-sm-3">
+															<h:outputLabel value="#{airport.country}" />
+														</p:column>
+														<p:column headerText="CountryCode"
+															styleClass="col-xs-6 col-sm-3">
+															<h:outputLabel value="#{airport.countryCode}" />
+														</p:column>
+														<p:column headerText="Country Abbrviation"
+															styleClass="col-xs-6 col-sm-3">
+															<h:outputLabel value="#{airport.countryAbbrviation}" />
+														</p:column>
+													</p:dataTable>
+
+												</div>
+											</div>
+										</div>
+									</div>
+								</h:form>
+							</div>
+						</h:panelGrid>
+					</p:panel>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- === END CONTENT === -->
+		<!-- === BEGIN FOOTER === -->
+		<ui:include src="footer.xhtml" />
+		<!-- === END FOOTER === -->
+	</div>
+</body>
+</html>

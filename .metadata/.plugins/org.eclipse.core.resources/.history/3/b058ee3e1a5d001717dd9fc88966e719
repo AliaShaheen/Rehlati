@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<ui:include src="primafacesHeader.xhtml" />
+<!-- Bootstrap -->
+<h:outputStylesheet name="bootstrap.css" library="css" />
+<h:outputStylesheet name="bootstrap.min.css" library="css" />
+<body>
+	<div id="body-bg">
+		<ui:include src="menu.html" />
+		<!-- === BEGIN CONTENT === -->
+		<h:form styleClass="search-page">
+		<div id="content">
+			<div styleClass="container background-white">
+				<div styleClass="row margin-vert-30">
+					<!-- payment Box -->
+					<div styleClass="col-md-6 col-md-offset-3 col-sm-offset-3">
+							<div styleClass="signup-header">
+								<h2>Payment page</h2>
+							</div>
+								<label>First Name</label> 
+								<p:inputText styleClass="form-control margin-bottom-20"
+										id="firstName" value="#{paymentAction.firstName}" />
+								
+								<label>Last Name</label> 
+								<p:inputText styleClass="form-control margin-bottom-20"
+										id="lastName" value="#{paymentAction.lastName}" />
+								
+								<label>Card Type <span styleClass="color-red">*</span></label>
+								<p:inputText styleClass="form-control margin-bottom-20"
+										id="cardType" value="#{paymentAction.cardType}" />
+								 
+								 <label>Card Number</label> 
+								<p:inputText styleClass="form-control margin-bottom-20" maxlength="19"
+										id="cardNumber" value="#{paymentAction.cardNumber}" />
+								<h:messages id="results" styleClass="color-red" /> 
+								
+								<label>CVV <span styleClass="color-red">*</span></label>
+								
+								<p:inputText styleClass="form-control margin-bottom-20"
+										id="cvv" value="#{paymentAction.cvv}" />
+							
+							 <div styleClass="col-lg-4 text-right">
+								<p:commandButton styleClass="btn btn-primary"  action="#{paymentAction.pay()}" value="Submit" 
+								update="results" />
+							</div>
+					</div>
+					<!-- End payment Box -->
+				</div>
+			</div>
+		</div>
+		</h:form>
+		<!-- === END CONTENT === -->
+
+
+		<!-- === BEGIN FOOTER === -->
+		<ui:include src="footer.xhtml" />
+		<!-- === END FOOTER === -->
+	</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+
+<div id="body-bg">
+
+	<div id="pre-header" styleClass="container" style="height: 340px"></div>
+	<div id="header">
+		<div styleClass="container">
+			<div styleClass="row">
+				<!-- Logo -->
+				<div styleClass="logo">
+					<a href="index.xhtml" title=""> <img
+						src="resources/img/logo.png" alt="Logo" />
+					</a>
+				</div>
+				<!-- End Logo -->
+			</div>
+		</div>
+	</div>
+	<!-- Top Menu -->
+	<div id="hornav" styleClass="container no-padding">
+		<div styleClass="row">
+			<div styleClass="col-md-12 no-padding">
+				<div styleClass="text-center visible-lg">
+					<ul id="hornavmenu" styleClass="nav navbar-nav">
+						<li><a href="index.xhtml" styleClass="fa-home">Home</a></li>
+						<li><span styleClass="fa-gears">Services</span>
+							<ul>
+								<li><a href="searchHotels.xhtml">Hotel Search</a></li>
+								<li><a href="weatherService.xhtml">Weather</a></li>
+								<li><a href="sunService.xhtml">Sunrise-Sunset</a></li>
+								<li><a href="airportService.xhtml">Airport Info</a></li>
+							</ul></li>
+						<li><a href="contact.xhtml" styleClass="fa-comment">Contact</a></li>
+						<li><a href="aboutus.xhtml"  styleClass="fa-copy">About Us</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End Top Menu -->
+
+	<!-- JS -->
+
+</div>

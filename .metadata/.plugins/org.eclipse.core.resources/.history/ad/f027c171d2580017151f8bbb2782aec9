@@ -1,0 +1,64 @@
+package com.rehlati.ejb;
+
+import java.rmi.RemoteException;
+
+import NET.webserviceX.www.LatLonDate;
+import NET.webserviceX.www.SunSetRiseServiceSoapProxy;
+
+import com.rehlati.ejb.util.RehlatiConfiguration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args ) throws RemoteException
+    {
+    	RehlatiConfiguration config = new RehlatiConfiguration();
+    	System.out.println("URL = " +config.getSUNSET_SUNRISE_INTEGRATION_URL());
+    	SunSetRiseServiceSoapProxy sunService = new SunSetRiseServiceSoapProxy(config.getSUNSET_SUNRISE_INTEGRATION_URL());
+		
+    	
+    	LatLonDate serviceRequest = new LatLonDate();
+    	serviceRequest.setLatitude(0);
+    	serviceRequest.setLongitude(0);
+    	serviceRequest.setTimeZone(0);
+    	serviceRequest.setDay(12);
+    	serviceRequest.setMonth(12);
+    	serviceRequest.setYear(2017);
+    	serviceRequest.setSunRiseTime(0);
+    	
+
+    	LatLonDate serviceResponse = new LatLonDate();
+    	
+    	serviceResponse = sunService.getSunSetRiseTime(serviceRequest);
+    	System.out.println("Sunrise will be at : " + serviceResponse.getSunRiseTime()); 
+    	System.out.println("Sunset will be at : " + serviceResponse.getSunSetTime()); 
+		
+    }
+    
+    public void callSunService(int day, int month, int year) throws RemoteException {
+    	RehlatiConfiguration config = new RehlatiConfiguration();
+    	System.out.println("URL = " +config.getSUNSET_SUNRISE_INTEGRATION_URL());
+    	SunSetRiseServiceSoapProxy sunService = new SunSetRiseServiceSoapProxy(config.getSUNSET_SUNRISE_INTEGRATION_URL());
+		
+    	
+    	LatLonDate serviceRequest = new LatLonDate();
+    	serviceRequest.setLatitude(0);
+    	serviceRequest.setLongitude(0);
+    	serviceRequest.setTimeZone(0);
+    	serviceRequest.setDay(day);
+    	serviceRequest.setMonth(month);
+    	serviceRequest.setYear(year);
+    	serviceRequest.setSunRiseTime(0);
+    	
+
+    	LatLonDate serviceResponse = new LatLonDate();
+    	
+    	serviceResponse = sunService.getSunSetRiseTime(serviceRequest);
+    	System.out.println("Sunrise will be at : " + serviceResponse.getSunRiseTime()); 
+    	System.out.println("Sunset will be at : " + serviceResponse.getSunSetTime()); 
+    	
+    }
+}

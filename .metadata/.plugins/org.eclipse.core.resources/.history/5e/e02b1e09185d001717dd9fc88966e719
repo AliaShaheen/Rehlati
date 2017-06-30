@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+ <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:o="http://omnifaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:ets="http://java.sun.com/jsf/composite/ets"
+       lang="en">
+       
+	<ui:include src="header.xhtml" />
+	<body>
+	 <div id="body-bg">
+		<ui:include src="menu.xhtml" />
+            <!-- === BEGIN CONTENT === -->
+            <div id="content">
+                <div styleClass="container background-white">
+                    <div styleClass="row margin-vert-30">
+                        <div styleClass="col-md-12">
+                            <h2 styleClass="margin-vert-20">About Us</h2>
+                            <div styleClass="row margin-bottom-30">
+                                <div styleClass="col-md-4 animate fadeInLeft">
+                                    <p>Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus lobortis.</p>
+                                    <p styleClass="margin-bottom-30">Lorem Ipsum is simply dummy text of Lorem the printing and typesettings. Aliquam dictum nulla eu varius porta. Maecenas congue dui id posuere fermentum. Sed fringilla sem sed massa ullamcorper, vitae rutrum justo sodales.
+                                        Cras sed iaculis enim. Sed aliquet viverra nisl a tristique. Curabitur vitae mauris sem. Pellentesque iaculis nibh leo, mattis aliquet arcu tincidunt at.</p>
+                                </div>
+                                <div styleClass="col-md-8 animate fadeIn">
+                                    <!-- Person Details -->
+                                    <div styleClass="col-md-4 col-sm-4 person-details margin-bottom-30">
+                                        <figure>
+                                            <img src="resources/img/theteam/image1.jpg" alt="image1">
+                                            <figcaption>
+                                                <h3 styleClass="margin-bottom-10">April
+                                                    <small>- Programmer</small>
+                                                </h3>
+                                                <span>Nullam id dolor id nibh ultricies vehicula ut id elit.</span>
+                                            </figcaption>
+                                            <ul styleClass="list-inline person-details-icons">
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-linkedin"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-dribbble"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-google-plus"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </figure>
+                                    </div>
+                                    <!-- //Portfolio Item// -->
+                                    <!-- Person Details -->
+                                    <div styleClass="col-md-4 col-sm-4 person-details margin-bottom-30">
+                                        <figure>
+                                            <img src="resources/img/theteam/image2.jpg" alt="image2">
+                                            <figcaption>
+                                                <h3 styleClass="margin-bottom-10">Simon
+                                                    <small>- Sales Assistant</small>
+                                                </h3>
+                                                <span>Nullam id dolor id nibh ultricies vehicula ut id elit.</span>
+                                            </figcaption>
+                                            <ul styleClass="list-inline person-details-icons">
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-linkedin"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-dribbble"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-google-plus"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </figure>
+                                    </div>
+                                    <!-- //Portfolio Item// -->
+                                    <!-- Person Details -->
+                                    <div styleClass="col-md-4 col-sm-4 person-details margin-bottom-30">
+                                        <figure>
+                                            <img src="resources/img/theteam/image3.jpg" alt="image3">
+                                            <figcaption>
+                                                <h3 styleClass="margin-bottom-10">Jeff
+                                                    <small>- Support</small>
+                                                </h3>
+                                                <span>Nullam id dolor id nibh ultricies vehicula ut id elit.</span>
+                                            </figcaption>
+                                            <ul styleClass="list-inline person-details-icons">
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-linkedin"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-dribbble"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i styleClass="fa-lg fa-google-plus"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </figure>
+                                    </div>
+                                    <!-- //Portfolio Item// -->
+                                </div>
+                            </div>
+                            <hr styleClass="margin-bottom-50">
+                            <div styleClass="row">
+                                <div styleClass="col-md-6">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo, laboriosam, quod odit quo quos itaque repellat quaerat a ad alias. Vel, nostrum id ab velit veritatis consequatur fugit sequi esse. Maecenas congue dui
+                                        id posuere fermentum.</p>
+                                    <div styleClass="row">
+                                        <div styleClass="col-sm-3">
+                                            <span styleClass="fa-stack fa-2x margin-vert-30 margin-horiz-40 hidden-xs animate fadeInLeft">
+                                                <i styleClass="fa fa-circle fa-stack-2x color-gray-light"></i>
+                                                <i styleClass="fa fa-cogs fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </div>
+                                        <div styleClass="col-sm-9">
+                                            <h3 styleClass="margin-vert-10">Pellentesque iaculis</h3>
+                                            <p>Lorem Ipsum is simply dummy text of Lorem the printing and typesettings. Aliquam dictum nulla eu varius porta. Maecenas congue dui id posuere fermentum.</p>
+                                        </div>
+                                    </div>
+                                    <div styleClass="row">
+                                        <div styleClass="col-sm-3">
+                                            <span styleClass="fa-stack fa-2x margin-vert-30 margin-horiz-40 hidden-xs animate fadeInLeft">
+                                                <i styleClass="fa fa-circle fa-stack-2x color-gray-light"></i>
+                                                <i styleClass="fa fa-cloud-download fa-stack-1x fa-inverse"></i>
+                                            </span>
+                                        </div>
+                                        <div styleClass="col-sm-9">
+                                            <h3 styleClass="margin-vert-10">Aliquam dictum nulla</h3>
+                                            <p>Lorem Ipsum is simply dummy text of Lorem the printing and typesettings. Aliquam dictum nulla eu varius porta. Maecenas congue dui id posuere fermentum.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div styleClass="col-md-6">
+                                    <!-- Progress Bars -->
+                                    <h3 styleClass="progress-label">Graphic Design
+                                        <span styleClass="pull-right">92%</span>
+                                    </h3>
+                                    <div styleClass="progress progress-sm">
+                                        <div styleClass="progress-bar progress-bar-primary" role="progressbar" style="width: 90%">
+                                        </div>
+                                    </div>
+                                    <h3 styleClass="progress-label">Marketing
+                                        <span styleClass="pull-right">82%</span>
+                                    </h3>
+                                    <div styleClass="progress progress-sm">
+                                        <div styleClass="progress-bar progress-bar-primary" role="progressbar" style="width: 82%">
+                                        </div>
+                                    </div>
+                                    <h3 styleClass="progress-label">SEO
+                                        <span styleClass="pull-right">74%</span>
+                                    </h3>
+                                    <div styleClass="progress progress-sm">
+                                        <div styleClass="progress-bar progress-bar-primary" role="progressbar" style="width: 74%">
+                                        </div>
+                                    </div>
+                                    <h3 styleClass="progress-label">Programming
+                                        <span styleClass="pull-right">78%</span>
+                                    </h3>
+                                    <div styleClass="progress progress-sm">
+                                        <div styleClass="progress-bar progress-bar-primary" role="progressbar" style="width: 78%">
+                                        </div>
+                                    </div>
+                                    <h3 styleClass="progress-label">PHP
+                                        <span styleClass="pull-right">88%</span>
+                                    </h3>
+                                    <div styleClass="progress progress-sm">
+                                        <div styleClass="progress-bar progress-bar-primary" role="progressbar" style="width: 88%">
+                                        </div>
+                                    </div>
+                                    <!-- End Progress Bars -->
+                                </div>
+                            </div>
+                            <hr styleClass="margin-vert-40">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- === END CONTENT === -->
+            <!-- === BEGIN FOOTER === -->
+			<ui:include src="footer.xhtml" />
+			<!-- === END FOOTER === -->
+         </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+package com.rehlati.payment;
+
+import java.io.Serializable;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.view.ViewScoped;
+
+
+/*
+ * @author alias
+ */
+
+@ManagedBean(name="payAction")
+@ViewScoped
+public class PaymentAction implements Serializable{
+	
+	
+
+    @PostConstruct
+    public void init() {
+    	System.out.println("SearchHotelsAction.init()");
+    }
+
+
+	 /**
+     * The method in the action that will do the work!
+     */
+	public void search(){
+		System.out.println("SearchHotelsAction.search() ...  Here we go!");
+	}
+
+}

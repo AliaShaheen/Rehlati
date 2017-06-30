@@ -1,0 +1,15 @@
+eclipse.preferences.version=1
+encoding//SunSetSunRiseIntegration/src/main/java/NET/webserviceX/www/LatLonDate.java=UTF-8
+encoding//SunSetSunRiseIntegration/src/main/java/NET/webserviceX/www/SunSetRiseService.java=UTF-8
+encoding//SunSetSunRiseIntegration/src/main/java/NET/webserviceX/www/SunSetRiseServiceLocator.java=UTF-8
+encoding//SunSetSunRiseIntegration/src/main/java/NET/webserviceX/www/SunSetRiseServiceSoap.java=UTF-8
+encoding//SunSetSunRiseIntegration/src/main/java/NET/webserviceX/www/SunSetRiseServiceSoapStub.java=UTF-8
+encoding//TranslatorIntegration/src/main/java/net/webservicex/www/Language.java=UTF-8
+encoding//TranslatorIntegration/src/main/java/net/webservicex/www/TranslateService.java=UTF-8
+encoding//TranslatorIntegration/src/main/java/net/webservicex/www/TranslateServiceLocator.java=UTF-8
+encoding//TranslatorIntegration/src/main/java/net/webservicex/www/TranslateServiceSoap.java=UTF-8
+encoding//TranslatorIntegration/src/main/java/net/webservicex/www/TranslateServiceSoapStub.java=UTF-8
+encoding//WeatherIntegration/src/main/java/NET/webserviceX/www/GlobalWeather.java=UTF-8
+encoding//WeatherIntegration/src/main/java/NET/webserviceX/www/GlobalWeatherLocator.java=UTF-8
+encoding//WeatherIntegration/src/main/java/NET/webserviceX/www/GlobalWeatherSoap.java=UTF-8
+encoding//WeatherIntegration/src/main/java/NET/webserviceX/www/GlobalWeatherSoapStub.java=UTF-8

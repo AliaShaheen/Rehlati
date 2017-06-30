@@ -1,0 +1,112 @@
+package com.hotels.web;
+
+import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.text.SimpleDateFormat;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.view.ViewScoped;
+
+import com.client.hotels.HttpRequestClient;
+import com.hotels.beans.Hotel;
+import com.hotels.beans.HotelSearchCritieria;
+
+/*
+ * @author alias
+ */
+
+@ManagedBean(name="searchHotelsAction")
+@ViewScoped
+public class SearchHotelsAction implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3212844015443630096L;
+
+	//user search criteria
+	private HotelSearchCritieria searchCriteria = new HotelSearchCritieria();
+	
+	// the list that will hold the results(search response)
+	private List<Hotel> hotel;
+	
+	// the URL we will call to get the results
+	private static String expediaURL = "https://offersvc.expedia.com/offers/v2/getOffers?scenario=deal-finder&page=foo&uid=foo&productType=Hotel";
+	
+
+    @PostConstruct
+    public void init() {
+    	System.out.println("SearchHotelsAction.init()");
+    }
+
+
+	 /**
+     * The method in the action that will do the work!
+     */
+	public void search(){
+		System.out.println("SearchHotelsAction.search() ...  Here we go!");
+		
+		// Create request query from the searchCriteria
+        StringBuilder searchQuery = new StringBuilder();
+        
+        try {
+        if( getSearchCriteria().getDestinationName() != null && !getSearchCriteria().getDestinationName().isEmpty()){
+				searchQuery.append("&destinationCity")
+				.append("=")
+				.append(URLEncoder.encode((getSearchCriteria().getDestinationName()), "UTF-8"));
+        }
+        if(getSearchCriteria().getStarMax()!= 0 ){
+				searchQuery.append("&maxStarRating")
+				.append("=")
+				.append(URLEncoder.encode(String.valueOf(getSearchCriteria().getStarMax()), "UTF-8"));
+        }
+        if(getSearchCriteria().getStarMin()!= 0 ){
+			searchQuery.append("&minStarRating")
+			.append("=")
+			.append(URLEncoder.encode(String.valueOf(getSearchCriteria().getStarMin()), "UTF-8"));
+    }
+        if(getSearchCriteria().getStartDate() != null && !getSearchCriteria().getStartDate().toString().isEmpty()){
+    		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    		String formatedDate = format.format(getSearchCriteria().getStartDate()).toString();
+				searchQuery.append("&minTripStartDate")
+				.append("=:")
+				.append(URLEncoder.encode(String.valueOf(formatedDate), "UTF-8"));
+        }
+        if(getSearchCriteria().getEndDate() != null && !getSearchCriteria().getEndDate().toString().isEmpty()){
+    		SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+    		String formatedDate = format.format(getSearchCriteria().getEndDate()).toString();
+				searchQuery.append("&minTripEndDate")
+				.append("=:")
+				.append(URLEncoder.encode(String.valueOf(formatedDate), "UTF-8"));
+        }
+        
+        } catch (UnsupportedEncodingException e) {
+        	System.out.println("SearchHotelsAction.search()" +e);
+		}
+        
+        // Call expedia backend
+        HttpRequestClient httpRequestClient= new HttpRequestClient();
+        setHotel(httpRequestClient.sendRequest(expediaURL, searchQuery.toString()).getHotel().getHotels());
+        
+	}
+	
+	public HotelSearchCritieria getSearchCriteria() {
+		return searchCriteria;
+	}
+	
+	public void setSearchCriteria(HotelSearchCritieria searchCriteria) {
+		this.searchCriteria = searchCriteria;
+	}
+
+	public List<Hotel> getHotel() {
+		return hotel;
+	}
+
+	public void setHotel(List<Hotel> hotel) {
+		this.hotel = hotel;
+	}
+
+}

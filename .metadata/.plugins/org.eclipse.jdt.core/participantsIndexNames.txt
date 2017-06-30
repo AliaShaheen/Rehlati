@@ -1,0 +1,3 @@
+INDEX VERSION 1.126
+D:\Alias\Locker\Project\Rehlati\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\65683625.index
+\RehlatiWeb\src\main\resources

@@ -1,0 +1,93 @@
+package com.rehlati.ejb;
+
+import java.io.StringReader;
+import java.rmi.RemoteException;
+
+import javax.xml.bind.JAXBContext;
+
+import net.webservicex.www.CCCheckerSoapProxy;
+import NET.webserviceX.www.AirportSoapProxy;
+import NET.webserviceX.www.LatLonDate;
+import NET.webserviceX.www.SunSetRiseServiceSoapProxy;
+
+import com.rehlati.client.beans.Airports;
+import com.rehlati.client.exceptions.InvalidCardNumberException;
+import com.rehlati.ejb.util.RehlatiConfiguration;
+
+	
+public class RehlatiEJB{
+
+	public LatLonDate callSunService(int day, int month, int year)
+			throws RemoteException {
+		
+			SunSetRiseServiceSoapProxy sunService = new SunSetRiseServiceSoapProxy("http://www.webservicex.net/sunsetriseservice.asmx");
+	    	
+	    	//fill the request
+	    	LatLonDate serviceRequest = new LatLonDate();
+	    	serviceRequest.setLatitude((float) 30.58);
+	    	serviceRequest.setLongitude((float) 36.23);
+	    	serviceRequest.setTimeZone(0);
+	    	serviceRequest.setDay(day);
+	    	serviceRequest.setMonth(month);
+	    	serviceRequest.setYear(year);
+	    	serviceRequest.setSunRiseTime(0);
+
+	    	LatLonDate serviceResponse = new LatLonDate();
+	    	//call the service and get the needed response
+	    	try {
+				serviceResponse = sunService.getSunSetRiseTime(serviceRequest);
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	    	return serviceResponse;
+	    	
+
+    }
+
+	public String callCheckCreditCardService(String cardType, String cardNumber)
+			throws RemoteException, InvalidCardNumberException {
+    	// init config 
+    	RehlatiConfiguration config = new RehlatiConfiguration();
+    	//init the service
+    	CCCheckerSoapProxy service = new CCCheckerSoapProxy(config.getCREDIT_CARD_INTEGRATION_URL());
+    	
+    	//call the service with the request params and get the needed response
+    	String validateResult = service.validateCardNumber(cardType, cardNumber);
+    	if(validateResult.equals("This Credit Card number is not valid.")){
+    		throw new InvalidCardNumberException("This Credit Card number is not valid.");
+    	}
+    	return validateResult;
+    }
+
+	public String callAirportServiceGetAirportInfoByCode(String airportCode)
+			throws RemoteException {
+    	// init config 
+    	RehlatiConfiguration config = new RehlatiConfiguration();
+    	//init the service
+    	AirportSoapProxy service = new AirportSoapProxy(config.getAIRPORT_INTEGRATION_URL());
+    	
+    	//call the service with the request params and get the needed response
+    	String airportInfoResult = service.getAirportInformationByAirportCode(airportCode);
+    	return airportInfoResult;
+    }
+
+	public Airports callAirportServiceGetAirportsByCountry(String countryName)
+			throws RemoteException {
+    	// init config 
+    	RehlatiConfiguration config = new RehlatiConfiguration();
+    	//init the service
+    	AirportSoapProxy service = new AirportSoapProxy(config.getAIRPORT_INTEGRATION_URL());
+    	
+    	//call the service with the request params and get the needed response
+    	String airportInfoResult = service.getAirportInformationByCountry(countryName);
+
+    	JAXBContext jaxb; 
+    	Airports airports;
+    	jaxb = JAXBContext.newInstance(Airports.class);
+    	StringReader reader = new StringReader(airportInfoResult);
+    	airports = (Airports) jaxb.createUnmarshaller().unmarshal(reader);
+    	return airports
+    }
+
+}

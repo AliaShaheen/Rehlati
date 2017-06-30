@@ -1,0 +1,79 @@
+package com.rehlati.services;
+
+import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.view.ViewScoped;
+import javax.xml.bind.JAXBException;
+
+import com.rehlati.client.beans.Airport;
+import com.rehlati.ejb.RehlatiEJB;
+
+/*
+ * @author alias
+ */
+
+@ManagedBean(name = "weatherServiceAction")
+@ViewScoped
+public class WeatherServiceAction implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7931851656891087833L;
+
+	private RehlatiEJB rehlatiEJB = new RehlatiEJB();
+
+	private String country = "Jordan";
+	private String city = "Amman";
+
+	@PostConstruct
+	public void init() {
+		System.out.println("WeatherServiceAction.init()");
+	}
+
+	/**
+	 * The method in the action that will do the work!
+	 */
+	public void search() {
+		System.out.println("WeatherServiceAction.search() ...  Here we go!");
+
+		try {
+			setAirports(rehlatiEJB.callWaetherServiceByCountry(countryName, cityName);
+			System.out.println("AirportServiceAction.search()");
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JAXBException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public List<Airport> getAirports() {
+		return airports;
+	}
+
+	public void setAirports(List<Airport> airports) {
+		this.airports = airports;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+}

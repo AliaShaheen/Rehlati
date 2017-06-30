@@ -1,0 +1,11 @@
+<!-- === BEGIN FOOTER === -->
+<div id="footer">
+	<div class="container">
+		<div class="row">
+			<div id="copyright" class="col-md-4">
+				<p class="pull-right">(c) 2017 Rehlati</p>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- End Footer-->

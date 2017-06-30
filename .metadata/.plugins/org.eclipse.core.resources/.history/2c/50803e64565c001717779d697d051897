@@ -1,0 +1,144 @@
+package com.rehlati.services;
+
+import java.io.Serializable;
+import java.rmi.RemoteException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.TimeZone;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ManagedBean;
+import javax.faces.view.ViewScoped;
+
+import NET.webserviceX.www.LatLonDate;
+
+import com.rehlati.ejb.RehlatiEJB;
+
+
+/*
+ * @author alias
+ */
+
+@ManagedBean(name="sunServiceAction")
+@ViewScoped
+public class SunServiceAction implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3889859617234059038L;
+	
+	private RehlatiEJB rehlatiEJB = new RehlatiEJB();
+	
+	private Date tripDate;
+	private String sunriseTime;
+	private String sunsetTime;
+	
+	
+	 @PostConstruct
+	    public void init() {
+	    	System.out.println("SunServiceAction.init()");
+	    }
+
+
+		 /**
+	     * The method in the action that will do the work!
+	     */
+		public void search(){
+			System.out.println("SunServiceAction.search() ...  Here we go!");
+
+			Calendar cal = Calendar.getInstance();
+			cal.setTime(getTripDate());
+			
+			int year = cal.get(Calendar.YEAR);
+			int month = cal.get(Calendar.MONTH);
+			int day = cal.get(Calendar.DAY_OF_MONTH);
+			LatLonDate serviceResponse = new LatLonDate();
+			try {
+				serviceResponse = rehlatiEJB.callSunService(day, month, year);
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			/*
+	    	SunSetRiseServiceSoapProxy sunService = new SunSetRiseServiceSoapProxy("http://www.webservicex.net/sunsetriseservice.asmx");
+	    	
+	    	//fill the request
+	    	LatLonDate serviceRequest = new LatLonDate();
+	    	serviceRequest.setLatitude(0);
+	    	serviceRequest.setLongitude(0);
+	    	serviceRequest.setTimeZone(0);
+	    	serviceRequest.setDay(day);
+	    	serviceRequest.setMonth(month);
+	    	serviceRequest.setYear(year);
+	    	serviceRequest.setSunRiseTime(0);
+
+	    	LatLonDate serviceResponse = new LatLonDate();
+	    	//call the service and get the needed response
+	    	try {
+				serviceResponse = sunService.getSunSetRiseTime(serviceRequest);
+			} catch (RemoteException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+  	*/
+			float sunrise = serviceResponse.getSunRiseTime();
+			Calendar sunriseCalendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+			sunriseCalendar.set(Calendar.HOUR_OF_DAY, 0);
+			sunriseCalendar.add(Calendar.HOUR_OF_DAY, (int) sunrise);
+			sunriseCalendar.set(Calendar.MINUTE, ((int)sunrise * 60) % 60);
+			sunriseCalendar.set(Calendar.SECOND, ((int)sunrise * 3600) % 3600);
+			//Then display the date in the timezone you want with a DateFormat:
+
+			DateFormat fmt = new SimpleDateFormat();
+			setSunriseTime(fmt.format(sunriseCalendar.getTime()));
+			
+			float sunset = serviceResponse.getSunSetTime();
+			Calendar sunsetCalendar = Calendar.getInstance(TimeZone.getTimeZone("UTC"));
+			sunsetCalendar.set(Calendar.HOUR_OF_DAY, 0);
+			sunsetCalendar.add(Calendar.HOUR_OF_DAY, (int) sunset);
+			sunsetCalendar.set(Calendar.MINUTE, ((int)sunset * 60) % 60);
+			sunsetCalendar.set(Calendar.SECOND, ((int)sunset * 3600) % 3600);
+
+			setSunsetTime(fmt.format(sunsetCalendar.getTime().getTime()));
+			
+		}
+
+
+		public Date getTripDate() {
+			return tripDate;
+		}
+
+
+		public void setTripDate(Date tripDate) {
+			this.tripDate = tripDate;
+		}
+
+
+		public String getSunriseTime() {
+			return sunriseTime;
+		}
+
+
+		public void setSunriseTime(String sunriseTime) {
+			this.sunriseTime = sunriseTime;
+		}
+
+
+		public String getSunsetTime() {
+			return sunsetTime;
+		}
+
+
+		public void setSunsetTime(String sunsetTime) {
+			this.sunsetTime = sunsetTime;
+		}
+
+	
+
+	 
+	    
+}

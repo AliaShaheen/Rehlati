@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+	<ui:include src="primafacesHeader.xhtml" />
+	<body>
+	 <div id="body-bg">
+		<ui:include src="menu.xhtml" />
+ 		<!-- === BEGIN CONTENT === -->
+ 		<h:form>
+            <div id="content">
+                <div class="container background-white">
+                    <div class="row margin-vert-30">
+                        <!-- Main Column -->
+						<div class="col-md-12">
+							<h2>Weather Service</h2>
+							<p>Get the weather for your city </p>
+
+							<br />
+							
+							<h:outputLabel value="Country" />
+							<div class="row margin-vert-30">
+								<p:inputText class="form-control margin-bottom-20"  value="#{weatherServiceAction.country}" />
+								</div>
+							
+							<h:outputLabel value="City" />
+							<div class="row margin-vert-30">
+								<p:inputText class="form-control margin-bottom-20"  value="#{weatherServiceAction.city}" />
+								</div>
+
+							<h:messages id="msg" class="color-red" /> 
+							
+							<div class="col-md-6">
+								<p:commandButton action="#{weatherServiceAction.search()}"
+									value="Submit"  update="results"  />
+							</div>
+
+
+
+							<div class="col-md-6">
+								<h:outputText id="results"
+									rendered="#{weatherServiceAction.result != null}"
+									value="#{weatherServiceAction.result}" />
+							</div>
+
+						</div>
+						<!-- End Main Column -->
+                    </div>
+                </div>
+            </div>
+            </h:form>
+            <!-- === END CONTENT === -->
+            <!-- === BEGIN FOOTER === -->
+			<ui:include src="footer.xhtml" />
+			<!-- === END FOOTER === -->
+         </div>
+    </body>
+</html>

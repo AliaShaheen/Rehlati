@@ -1,0 +1,48 @@
+package com.rehlati.util;
+
+import java.util.ResourceBundle;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.application.FacesMessage.Severity;
+import javax.faces.context.FacesContext;
+
+public class JSFMessageHelper {
+	public static void addMessageGlobal(String messageFromBundle)
+	{
+		try {
+		FacesContext context = FacesContext.getCurrentInstance();
+    	ResourceBundle bundle = context.getApplication().getResourceBundle(context, "msg");
+    	String messageString =bundle.getString(messageFromBundle);
+        FacesMessage message = new FacesMessage(messageString);
+        message .setSeverity(FacesMessage.SEVERITY_INFO);
+        FacesContext.getCurrentInstance().addMessage(null, message);
+		} catch (Exception e) {
+			e.printStackTrace();
+	        FacesMessage message = new FacesMessage(messageFromBundle);
+	        message .setSeverity(FacesMessage.SEVERITY_ERROR);
+	        FacesContext.getCurrentInstance().addMessage(null, message);
+		}
+	}
+	
+	public static void addErrorMessageGlobal(String messageFromBundle)
+	{
+		try {
+			FacesContext context = FacesContext.getCurrentInstance();
+	    	ResourceBundle bundle = context.getApplication().getResourceBundle(context, "msg");
+	    	String messageString =bundle.getString(messageFromBundle);
+	        FacesMessage message = new FacesMessage(messageString);
+	        message .setSeverity(FacesMessage.SEVERITY_ERROR);
+	        FacesContext.getCurrentInstance().addMessage(null, message);	
+		} catch (Exception e) {
+			e.printStackTrace();
+	        FacesMessage message = new FacesMessage(messageFromBundle);
+	        message .setSeverity(FacesMessage.SEVERITY_ERROR);
+	        FacesContext.getCurrentInstance().addMessage(null, message);
+		}
+		
+        
+	}
+
+
+
+}

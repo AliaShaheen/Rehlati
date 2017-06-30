@@ -1,0 +1,5 @@
+package com.rehlati.servicelocator;
+
+public class ServiceLocator {
+
+}

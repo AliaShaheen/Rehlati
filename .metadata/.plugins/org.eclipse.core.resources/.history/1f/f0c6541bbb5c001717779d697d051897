@@ -1,0 +1,7 @@
+package com.rehlati.client.exceptions;
+
+import java.io.Serializable;
+
+public class InvalidCardNumberException extends Exception implements Serializable {
+
+}

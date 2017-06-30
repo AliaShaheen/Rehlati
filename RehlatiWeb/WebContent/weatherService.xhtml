@@ -1,0 +1,66 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<ui:include src="primafacesHeader.xhtml" />
+<body>
+	<div id="body-bg">
+		<ui:include src="menu.html" />
+		<!-- === BEGIN CONTENT === -->
+		<div id="content">
+			<div class="container background-white">
+				<div class="row margin-vert-30">
+					<div class="col-md-8 col-md-offset-3 col-sm-offset-3">
+						<div class="headline">
+							<h2>Weather Service</h2>
+							<p>Get the weather for your city</p>
+
+							<br />
+
+							<h:form id="results" styleClass="search-page">
+								<h:outputLabel value="Country" />
+								<div class="row margin-bottom-20">
+									<div class="col-md-6 col-md-offset-0">
+										<p:inputText styleClass="form-control margin-bottom-20"
+											value="#{weatherServiceAction.country}" />
+									</div>
+								</div>
+
+								<h:outputLabel value="City" />
+								<div class="row margin-bottom-20">
+									<div class="col-md-6 col-md-offset-0">
+										<p:inputText styleClass="form-control margin-bottom-20"
+											value="#{weatherServiceAction.city}" />
+									</div>
+								</div>
+
+								<h:messages id="msg" styleClass="color-red" />
+
+								<p>
+									<p:commandButton action="#{weatherServiceAction.search()}"
+										value="Submit" update="results" styleClass="btn btn-primary" />
+								</p>
+
+								<div class="row margin-bottom-20">
+									<div class="col-md-6 col-md-offset-0">
+										<h:outputText
+											rendered="#{weatherServiceAction.result != null}"
+											value="#{weatherServiceAction.result}" />
+									</div>
+								</div>
+							</h:form>
+							<!-- End Main Column -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- === END CONTENT === -->
+		<!-- === BEGIN FOOTER === -->
+		<ui:include src="footer.xhtml" />
+		<!-- === END FOOTER === -->
+	</div>
+</body>
+</html>
